@@ -1,14 +1,13 @@
 ﻿using System;
-
+using MvvmCross.iOS.Views;
 using UIKit;
 
-namespace FoodPin.iOS
+namespace FoodPin.iOS.Views
 {
-	public partial class ViewController : UIViewController
+	public partial class RestaurantView : MvxViewController
 	{
-		protected ViewController(IntPtr handle) : base(handle)
+		public RestaurantView() : base("RestaurantView", null)
 		{
-			// Note: this .ctor should not contain any initialization logic.
 		}
 
 		public override void ViewDidLoad()
@@ -24,3 +23,4 @@ namespace FoodPin.iOS
 		}
 	}
 }
+
