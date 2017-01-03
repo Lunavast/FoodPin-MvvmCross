@@ -36,6 +36,8 @@
     <Compile Include="ViewModels\RestaurantDetailViewModel.cs" />
     <Compile Include="ViewModels\RateRestaurantViewModel.cs" />
     <Compile Include="Messenger\RatingChangeMessage.cs" />
+    <Compile Include="ViewModels\MapKitViewModel.cs" />
+    <Compile Include="Services\IGeoCoderService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Core">
@@ -74,6 +76,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Models\" />
     <Folder Include="Messenger\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

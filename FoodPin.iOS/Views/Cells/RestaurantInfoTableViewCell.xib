@@ -84,5 +84,6 @@
         <image name="traif" width="640" height="640"/>
         <image name="upstate" width="640" height="640"/>
         <image name="wafflewolf" width="640" height="640"/>
+        <image name="Map" width="48" height="48"/>
     </resources>
 </document>

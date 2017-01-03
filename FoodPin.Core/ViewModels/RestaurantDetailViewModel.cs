@@ -21,8 +21,6 @@ namespace FoodPin.Core.ViewModels
 		void RatingChangeHandler(RatingChangeMessage obj)
 		{
 			_rating = obj.Rating;
-
-			Debug.WriteLine(StringRating);
 		}
 
 		public class Navigation
@@ -95,11 +93,23 @@ namespace FoodPin.Core.ViewModels
 		public Rating Rating
 		{
 			get { return _rating; }
-			set { _rating = value; RaisePropertyChanged(() => Rating); RaisePropertyChanged(() => StringRating); }
+			set { _rating = value; RaisePropertyChanged(() => Rating); }
 		}
-		public string StringRating
+
+		public ICommand ShowMapCommand
 		{
-			get { return Rating.ToString(); }
+			get
+			{
+				return new MvxCommand(() => ShowViewModel<MapKitViewModel>(new RestaurantDetailViewModel.Navigation()
+				{
+					Name = Item.Name,
+					Location = Item.Location,
+					Type = Item.Type,
+					IsVisited = Item.IsVisited,
+					PhoneNumber = Item.PhoneNumber,
+					ImageName = Item.ImageName
+				}));
+			}
 		}
 	}
 }

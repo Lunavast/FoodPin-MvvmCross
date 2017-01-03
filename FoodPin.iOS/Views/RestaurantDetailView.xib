@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantDetailView">
             <connections>
+                <outlet property="MapButton" destination="enu-vU-Few" id="Jk3-MH-bBQ"/>
                 <outlet property="RatingButton" destination="8Wx-Gj-Hdb" id="aeY-gp-CJ6"/>
                 <outlet property="RestaurantImageView" destination="oYe-XN-yZw" id="qnu-Yn-ojG"/>
                 <outlet property="TableView" destination="Hpu-4j-jBc" id="0MH-qf-eFp"/>
@@ -57,6 +58,21 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enu-vU-Few">
+                    <rect key="frame" x="319" y="128" width="40" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="SGQ-XT-ml3"/>
+                        <constraint firstAttribute="height" constant="40" id="nsj-Hl-WLw"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="Map"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -67,9 +83,11 @@
                 <constraint firstItem="Hpu-4j-jBc" firstAttribute="top" secondItem="oYe-XN-yZw" secondAttribute="bottom" id="BqR-al-1Da"/>
                 <constraint firstItem="Hpu-4j-jBc" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="CmB-fc-UDS"/>
                 <constraint firstAttribute="trailing" secondItem="yj3-Bu-n7z" secondAttribute="trailing" id="EbS-XB-zWr"/>
+                <constraint firstAttribute="trailing" secondItem="enu-vU-Few" secondAttribute="trailing" constant="16" id="KPV-BW-hf8"/>
                 <constraint firstItem="oYe-XN-yZw" firstAttribute="top" secondItem="yj3-Bu-n7z" secondAttribute="bottom" id="Rq3-mf-xer"/>
                 <constraint firstItem="oYe-XN-yZw" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="UGE-AD-Rte"/>
                 <constraint firstItem="Hpu-4j-jBc" firstAttribute="top" secondItem="oYe-XN-yZw" secondAttribute="bottom" id="ghy-Yz-LLm"/>
+                <constraint firstItem="enu-vU-Few" firstAttribute="top" secondItem="8Wx-Gj-Hdb" secondAttribute="bottom" constant="8" id="j47-m5-JNB"/>
                 <constraint firstAttribute="trailing" secondItem="8Wx-Gj-Hdb" secondAttribute="trailing" constant="16" id="j5f-ab-UXv"/>
                 <constraint firstAttribute="bottom" secondItem="Hpu-4j-jBc" secondAttribute="bottom" id="nyg-cT-moF"/>
                 <constraint firstAttribute="trailing" secondItem="oYe-XN-yZw" secondAttribute="trailing" id="xw1-XZ-KZj"/>
@@ -79,6 +97,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Map" width="32" height="32"/>
         <image name="Rating" width="128" height="128"/>
     </resources>
 </document>

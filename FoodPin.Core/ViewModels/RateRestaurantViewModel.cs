@@ -50,7 +50,7 @@ namespace FoodPin.Core.ViewModels
 		private MvxCommand _goodCommand;
 		public ICommand GoodCommand
 		{
-			get//
+			get
 			{
 				_goodCommand = _goodCommand ?? new MvxCommand(DoGood);
 				return _goodCommand;

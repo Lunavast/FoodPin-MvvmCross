@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
@@ -33,31 +33,31 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bsw-G6-LZJ">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bsw-G6-LZJ">
                                 <rect key="frame" x="70" y="6" width="244" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJj-JD-qQp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJj-JD-qQp" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="0.0" width="244" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixy-qP-8te">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixy-qP-8te" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="21.5" width="244" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x49-Y6-Bv1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x49-Y6-Bv1" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="43.5" width="244" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="x49-Y6-Bv1" firstAttribute="height" secondItem="RJj-JD-qQp" secondAttribute="height" id="I9Y-xj-5bD"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
@@ -84,4 +84,33 @@
             <point key="canvasLocation" x="35" y="49"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Close" width="84" height="84"/>
+        <image name="Dislike" width="84" height="84"/>
+        <image name="Good" width="256" height="256"/>
+        <image name="Great" width="256" height="256"/>
+        <image name="Rating" width="256" height="256"/>
+        <image name="barrafina" width="640" height="640"/>
+        <image name="bourkestreetbakery" width="640" height="640"/>
+        <image name="cafedeadend" width="640" height="640"/>
+        <image name="cafeloisl" width="640" height="640"/>
+        <image name="cafelore" width="640" height="640"/>
+        <image name="confessional" width="640" height="640"/>
+        <image name="donostia" width="640" height="640"/>
+        <image name="fiveleaves" width="640" height="640"/>
+        <image name="forkeerestaurant" width="640" height="640"/>
+        <image name="grahamavenuemeats" width="640" height="640"/>
+        <image name="haighschocolate" width="640" height="640"/>
+        <image name="homei" width="480" height="480"/>
+        <image name="palominoespresso" width="640" height="640"/>
+        <image name="petiteoyster" width="640" height="640"/>
+        <image name="posatelier" width="640" height="640"/>
+        <image name="royaloak" width="640" height="640"/>
+        <image name="teakha" width="640" height="640"/>
+        <image name="thaicafe" width="640" height="640"/>
+        <image name="traif" width="640" height="640"/>
+        <image name="upstate" width="640" height="640"/>
+        <image name="wafflewolf" width="640" height="640"/>
+        <image name="Map" width="48" height="48"/>
+    </resources>
 </document>

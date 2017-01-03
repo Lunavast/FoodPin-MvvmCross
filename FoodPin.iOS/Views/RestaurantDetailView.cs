@@ -37,7 +37,7 @@ namespace FoodPin.iOS.Views
 			NavigationController.HidesBarsOnSwipe = false;
 			NavigationController.SetNavigationBarHidden(false, true);
 
-			RatingButton.SetImage(UIImage.FromBundle(ViewModel.StringRating), UIControlState.Normal);
+			RatingButton.SetImage(UIImage.FromBundle(ViewModel.Rating.ToString()), UIControlState.Normal);
 		}
 
 		void BindView()
@@ -45,6 +45,7 @@ namespace FoodPin.iOS.Views
 			var BindingSet = this.CreateBindingSet<RestaurantDetailView, RestaurantDetailViewModel>();
 			BindingSet.Bind(RestaurantImageView).For(iv => iv.Image).To((RestaurantDetailViewModel vm) => vm.Item.ImageName).WithConversion("AssetsImage");
 			BindingSet.Bind(RatingButton).To((RestaurantDetailViewModel vm) => vm.ShowRatingCommand);
+			BindingSet.Bind(MapButton).To((RestaurantDetailViewModel vm) => vm.ShowMapCommand);
 			BindingSet.Apply();
 		}
 
