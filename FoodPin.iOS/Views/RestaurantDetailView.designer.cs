@@ -13,6 +13,9 @@ namespace FoodPin.iOS.Views
 	partial class RestaurantDetailView
 	{
 		[Outlet]
+		UIKit.UIButton RatingButton { get; set; }
+
+		[Outlet]
 		UIKit.UIImageView RestaurantImageView { get; set; }
 
 		[Outlet]
@@ -28,6 +31,11 @@ namespace FoodPin.iOS.Views
 			if (TableView != null) {
 				TableView.Dispose ();
 				TableView = null;
+			}
+
+			if (RatingButton != null) {
+				RatingButton.Dispose ();
+				RatingButton = null;
 			}
 		}
 	}

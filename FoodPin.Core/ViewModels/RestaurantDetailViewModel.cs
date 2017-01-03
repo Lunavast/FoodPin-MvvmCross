@@ -11,7 +11,9 @@ namespace FoodPin.Core.ViewModels
 			public string Name { get; set; }
 			public string Location { get; set; }
 			public string Type { get; set; }
-			public bool Visited { get; set; }
+			public bool IsVisited { get; set; }
+			public string ImageName { get; set; }
+			public string PhoneNumber { get; set; }
 		}
 
 		public void Init(Navigation nav)
@@ -20,7 +22,10 @@ namespace FoodPin.Core.ViewModels
 			{
 				Name = nav.Name,
 				Location = nav.Location,
-				Type = nav.Type
+				Type = nav.Type,
+				IsVisited = nav.IsVisited,
+				ImageName = nav.ImageName,
+				PhoneNumber = nav.PhoneNumber
 			};
 		}
 

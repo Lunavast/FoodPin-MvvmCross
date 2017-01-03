@@ -43,8 +43,8 @@ namespace FoodPin.iOS.Cells
 				this.CreateBinding(LocationLabel).To((RestaurantItem i) => i.Location).Apply();
 				this.CreateBinding(TypeLabel).To((RestaurantItem i) => i.Type).Apply();
 				this.CreateBinding(_isChecked).For(v => v.Accessory).To((RestaurantItem i) => i.IsVisited).Apply();
+				this.CreateBinding(ThumbnailImageView).To((RestaurantItem i) => i.ImageName).WithConversion("AssetsImage").Apply();
 			});
 		}
-
 	}
 }

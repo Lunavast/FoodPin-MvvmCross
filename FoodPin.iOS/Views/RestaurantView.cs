@@ -46,6 +46,7 @@ namespace FoodPin.iOS.Views
 		private void ConfigureTableView()
 		{
 			TableView.EstimatedRowHeight = 80;
+			TableView.RowHeight = UITableView.AutomaticDimension;
 
 			var Source = new RestaurantSource(this, TableView, RestaurantTableViewCell.Key, RestaurantTableViewCell.Key);
 			TableView.Source = Source;

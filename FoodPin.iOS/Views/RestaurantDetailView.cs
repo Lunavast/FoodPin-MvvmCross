@@ -26,6 +26,9 @@ namespace FoodPin.iOS.Views
 		{
 			base.ViewDidLoad();
 			// Perform any additional setup after loading the view, typically from a nib.
+
+			this.CreateBinding(RestaurantImageView).For(iv => iv.Image).To((RestaurantDetailViewModel vm) => vm.Item.ImageName).WithConversion("AssetsImage").Apply();
+			    
 			ConfigureTableView();
 		}
 
@@ -39,9 +42,12 @@ namespace FoodPin.iOS.Views
 
 		void ConfigureTableView()
 		{
+			TableView.EstimatedRowHeight = 36;
+			TableView.RowHeight = UITableView.AutomaticDimension;
+
 			TableView.BackgroundColor = UIColor.FromRGB(240.0f / 255.0f, 240.0f / 255.0f, 240.0f / 255.0f).ColorWithAlpha(0.2f);
 			TableView.TableFooterView = new UIView(new CGRect(0, 0, 0, 0));
-			TableView.SeparatorColor = UIColor.FromRGB(240.0f / 255.0f, 240.0f / 255.0f, 240.0f / 255.0f).ColorWithAlpha(0.8f); 
+			TableView.SeparatorColor = UIColor.FromRGB(240.0f / 255.0f, 240.0f / 255.0f, 240.0f / 255.0f).ColorWithAlpha(0.8f);
 
 			var Source = new TableSource(ViewModel);
 			TableView.Source = Source;
@@ -79,6 +85,11 @@ namespace FoodPin.iOS.Views
 							break;
 						}
 					case 3:
+						{
+							cell.ConfigureCell("Phone", _vm.Item.PhoneNumber);
+							break;
+						}
+					case 4:
 						{
 							cell.ConfigureCell("Been here", _vm.Item.IsVisited ? "Yes" : "No");
 							break;

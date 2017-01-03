@@ -11,8 +11,9 @@ namespace FoodPin.Core.Models
 		public string Name { get; set; }
 		public string Location { get; set; }
 		public string Type { get; set; }
-
-		public Boolean IsVisited { get; set; } = false;
+		public string ImageName { get; set; }
+		public string PhoneNumber { get; set; }
+		public bool IsVisited { get; set; } = false;
 	}
 
 }
