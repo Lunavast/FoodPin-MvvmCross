@@ -34,6 +34,8 @@
     <Compile Include="ViewModels\RestaurantViewModel.cs" />
     <Compile Include="Models\RestaurantItem.cs" />
     <Compile Include="ViewModels\RestaurantDetailViewModel.cs" />
+    <Compile Include="ViewModels\RateRestaurantViewModel.cs" />
+    <Compile Include="Messenger\RatingChangeMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Core">
@@ -61,6 +63,9 @@
     <Reference Include="MvvmCross.Plugins.Sqlite">
       <HintPath>..\packages\MvvmCross.Plugin.SQLitePCL.4.4.0\lib\portable-win+net45+wp8+win8+wpa81+win81+dotnet\MvvmCross.Plugins.Sqlite.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -68,6 +73,7 @@
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="Models\" />
+    <Folder Include="Messenger\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

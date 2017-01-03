@@ -92,12 +92,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="MvvmCross.Platform">
-      <HintPath>..\packages\MvvmCross.Platform.4.3.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.iOS">
-      <HintPath>..\packages\MvvmCross.Platform.4.3.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
-    </Reference>
     <Reference Include="MvvmCross.Core">
       <HintPath>..\packages\MvvmCross.Core.4.3.0\lib\Xamarin.iOS10\MvvmCross.Core.dll</HintPath>
     </Reference>
@@ -112,6 +106,15 @@
     </Reference>
     <Reference Include="MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.Binding.4.3.0\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform">
+      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\Xamarin.iOS10\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.iOS">
+      <HintPath>..\packages\MvvmCross.Platform.4.4.0\lib\Xamarin.iOS10\MvvmCross.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.4.4.0\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -260,6 +263,7 @@
     <InterfaceDefinition Include="Views\Cells\RestaurantTableViewCell.xib" />
     <InterfaceDefinition Include="Views\RestaurantDetailView.xib" />
     <InterfaceDefinition Include="Views\Cells\RestaurantInfoTableViewCell.xib" />
+    <InterfaceDefinition Include="Views\RateRestaurantView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -290,6 +294,11 @@
       <DependentUpon>RestaurantInfoTableViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Converters\AssetsImageValueConverter.cs" />
+    <Compile Include="Views\RateRestaurantView.cs" />
+    <Compile Include="Views\RateRestaurantView.designer.cs">
+      <DependentUpon>RateRestaurantView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodPin.Core\FoodPin.Core.csproj">

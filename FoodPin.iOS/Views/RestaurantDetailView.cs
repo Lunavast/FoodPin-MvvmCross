@@ -25,10 +25,8 @@ namespace FoodPin.iOS.Views
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			// Perform any additional setup after loading the view, typically from a nib.
-
-			this.CreateBinding(RestaurantImageView).For(iv => iv.Image).To((RestaurantDetailViewModel vm) => vm.Item.ImageName).WithConversion("AssetsImage").Apply();
-			    
+			// Perform any additional setup after loading the view, typically from a nib.ShowRatingCommand
+			BindView();
 			ConfigureTableView();
 		}
 
@@ -38,6 +36,16 @@ namespace FoodPin.iOS.Views
 			NavigationItem.Title = ViewModel.Item.Name;
 			NavigationController.HidesBarsOnSwipe = false;
 			NavigationController.SetNavigationBarHidden(false, true);
+
+			RatingButton.SetImage(UIImage.FromBundle(ViewModel.StringRating), UIControlState.Normal);
+		}
+
+		void BindView()
+		{
+			var BindingSet = this.CreateBindingSet<RestaurantDetailView, RestaurantDetailViewModel>();
+			BindingSet.Bind(RestaurantImageView).For(iv => iv.Image).To((RestaurantDetailViewModel vm) => vm.Item.ImageName).WithConversion("AssetsImage");
+			BindingSet.Bind(RatingButton).To((RestaurantDetailViewModel vm) => vm.ShowRatingCommand);
+			BindingSet.Apply();
 		}
 
 		void ConfigureTableView()
