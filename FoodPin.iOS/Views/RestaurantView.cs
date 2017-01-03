@@ -29,6 +29,20 @@ namespace FoodPin.iOS.Views
 			ConfigureTableView();
 		}
 
+
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+			NavigationController.NavigationBar.TopItem.Title = "Food Pin";
+			NavigationController.HidesBarsOnSwipe = true;
+		}
+
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear(animated);
+			NavigationController.NavigationBar.TopItem.Title = "";
+		}
+
 		private void ConfigureTableView()
 		{
 			TableView.EstimatedRowHeight = 80;

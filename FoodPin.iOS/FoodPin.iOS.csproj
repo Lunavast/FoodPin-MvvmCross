@@ -127,6 +127,8 @@
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Views\RestaurantView.xib" />
     <InterfaceDefinition Include="Views\Cells\RestaurantTableViewCell.xib" />
+    <InterfaceDefinition Include="Views\RestaurantDetailView.xib" />
+    <InterfaceDefinition Include="Views\Cells\RestaurantInfoTableViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -147,6 +149,14 @@
     <Compile Include="Views\Cells\RestaurantTableViewCell.cs" />
     <Compile Include="Views\Cells\RestaurantTableViewCell.designer.cs">
       <DependentUpon>RestaurantTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RestaurantDetailView.cs" />
+    <Compile Include="Views\RestaurantDetailView.designer.cs">
+      <DependentUpon>RestaurantDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\RestaurantInfoTableViewCell.cs" />
+    <Compile Include="Views\Cells\RestaurantInfoTableViewCell.designer.cs">
+      <DependentUpon>RestaurantInfoTableViewCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

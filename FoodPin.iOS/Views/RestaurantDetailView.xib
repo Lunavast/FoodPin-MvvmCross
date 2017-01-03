@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantDetailView">
+            <connections>
+                <outlet property="RestaurantImageView" destination="oYe-XN-yZw" id="qnu-Yn-ojG"/>
+                <outlet property="TableView" destination="Hpu-4j-jBc" id="0MH-qf-eFp"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oYe-XN-yZw">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="oYe-XN-yZw" secondAttribute="height" multiplier="125:111" id="6Pd-GL-JAk"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="26" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hpu-4j-jBc">
+                    <rect key="frame" x="0.0" y="333" width="375" height="334"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Hpu-4j-jBc" secondAttribute="trailing" id="6HV-Jz-NUF"/>
+                <constraint firstItem="Hpu-4j-jBc" firstAttribute="top" secondItem="oYe-XN-yZw" secondAttribute="bottom" id="BqR-al-1Da"/>
+                <constraint firstItem="Hpu-4j-jBc" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="CmB-fc-UDS"/>
+                <constraint firstItem="oYe-XN-yZw" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="UGE-AD-Rte"/>
+                <constraint firstItem="Hpu-4j-jBc" firstAttribute="top" secondItem="oYe-XN-yZw" secondAttribute="bottom" id="ghy-Yz-LLm"/>
+                <constraint firstAttribute="bottom" secondItem="Hpu-4j-jBc" secondAttribute="bottom" id="nyg-cT-moF"/>
+                <constraint firstItem="oYe-XN-yZw" firstAttribute="top" secondItem="2" secondAttribute="top" id="ogy-Nd-7Ou"/>
+                <constraint firstAttribute="trailing" secondItem="oYe-XN-yZw" secondAttribute="trailing" id="xw1-XZ-KZj"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

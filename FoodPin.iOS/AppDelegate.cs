@@ -27,7 +27,26 @@ namespace FoodPin.iOS
 
 			Window.MakeKeyAndVisible();
 
+			ConfigureNavigationBar();
+
 			return true;
+		}
+
+		private void ConfigureNavigationBar()
+		{
+			UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(242.0f / 255.0f, 116.0f / 255.0f, 119.0f / 255.0f);
+			UINavigationBar.Appearance.TintColor = UIColor.White;
+
+			var BarFont = UIFont.FromName("Avenir-Light", 24.0f);
+
+			if (BarFont == null)
+				return;
+
+			UINavigationBar.Appearance.TitleTextAttributes = new UIStringAttributes()
+			{
+				ForegroundColor = UIColor.White,
+				Font = BarFont
+			};
 		}
 	}
 }

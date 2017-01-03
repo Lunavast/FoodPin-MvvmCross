@@ -25,17 +25,13 @@ namespace FoodPin.Core.ViewModels
 		{
 			get
 			{
-				//return new MvxCommand<RestaurantItem>(i => Debug.WriteLine("Selection"));
-				//// ShowViewModel<RestaurantDetailViewModel>(new RestaurantDetailViewModel.Navigation()
-				////{
-
-				////}));
-
-				return new MvxCommand<RestaurantItem>(i =>
+				return new MvxCommand<RestaurantItem>(i => ShowViewModel<RestaurantDetailViewModel>(new RestaurantDetailViewModel.Navigation()
 				{
-					i.IsVisited = !i.IsVisited;
-					Debug.WriteLine("accessory");
-				});
+					Name = i.Name,
+					Location = i.Location,
+					Type = i.Type,
+					Visited = i.IsVisited
+				}));
 			}
 		}
 

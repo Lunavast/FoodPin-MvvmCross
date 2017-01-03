@@ -33,6 +33,7 @@
     <Compile Include="ViewModels\TabBarViewModel.cs" />
     <Compile Include="ViewModels\RestaurantViewModel.cs" />
     <Compile Include="Models\RestaurantItem.cs" />
+    <Compile Include="ViewModels\RestaurantDetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Core">

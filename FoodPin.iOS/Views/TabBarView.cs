@@ -38,8 +38,10 @@ namespace FoodPin.iOS.Views
 
 		private UIViewController CreateTabFor(string title, string imageName, IMvxViewModel viewModel)
 		{
+			//var controller = new UINavigationController();
 			var screen = this.CreateViewControllerFor(viewModel) as UIViewController;
 			SetTitleAndTabBarItem(screen, title, imageName);
+			//controller.PushViewController(screen, false);
 			return screen;
 		}
 
