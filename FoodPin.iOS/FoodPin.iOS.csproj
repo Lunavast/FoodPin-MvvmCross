@@ -121,10 +121,12 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Views\" />
+    <Folder Include="Views\Cells\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Views\RestaurantView.xib" />
+    <InterfaceDefinition Include="Views\Cells\RestaurantTableViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -141,6 +143,10 @@
     <Compile Include="Views\RestaurantView.cs" />
     <Compile Include="Views\RestaurantView.designer.cs">
       <DependentUpon>RestaurantView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\RestaurantTableViewCell.cs" />
+    <Compile Include="Views\Cells\RestaurantTableViewCell.designer.cs">
+      <DependentUpon>RestaurantTableViewCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
