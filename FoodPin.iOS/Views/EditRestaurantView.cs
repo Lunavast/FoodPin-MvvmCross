@@ -131,7 +131,17 @@ namespace FoodPin.iOS.Views
 
 			_done = new UIBarButtonItem(UIBarButtonSystemItem.Save, (sender, e) =>
 			{
-				ViewModel.DoneCommand.Execute(null);
+				if (ViewModel.IsValid)
+				{
+					ViewModel.DoneCommand.Execute(null);
+				}
+				else 
+				{
+					var AlertController = UIAlertController.Create("Problem offured", "Some field are empty. Fill all forms and try again.", UIAlertControllerStyle.Alert);
+					var OkAction = UIAlertAction.Create("OK", UIAlertActionStyle.Cancel, (obj) => { });
+					AlertController.AddAction(OkAction);
+					this.PresentViewController(AlertController, true, null);
+				}
 			});
 			this.NavigationItem.RightBarButtonItem = _done;
 
@@ -151,7 +161,5 @@ namespace FoodPin.iOS.Views
 			BindingSet.Bind(NoButton).To(vm => vm.NotVisitedCommand);
 			BindingSet.Apply();
 		}
-
-
 	}
 }

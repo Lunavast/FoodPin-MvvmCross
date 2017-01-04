@@ -79,6 +79,13 @@ namespace FoodPin.Core.ViewModels
 			RaisePropertyChanged(() => Item);
 		}
 
-
+		private bool _isValid;
+		public bool IsValid
+		{
+			get
+			{
+				return !string.IsNullOrWhiteSpace(Item.Name) && !string.IsNullOrWhiteSpace(Item.Location) && !string.IsNullOrWhiteSpace(Item.Type);
+			}
+		}
 	}
 }
