@@ -29,18 +29,32 @@ namespace FoodPin.iOS.Views
 			ConfigureTableView();
 		}
 
-
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(animated);
-			NavigationController.NavigationBar.TopItem.Title = "Food Pin";
-			NavigationController.HidesBarsOnSwipe = true;
+			ConfigureNavigationController();
 		}
 
 		public override void ViewWillDisappear(bool animated)
 		{
 			base.ViewWillDisappear(animated);
 			NavigationController.NavigationBar.TopItem.Title = "";
+		}
+
+		private UIBarButtonItem _addButton { get; set; }
+		void ConfigureNavigationController()
+		{
+			if (_addButton == null)
+			{
+				UIBarButtonItem addButton = new UIBarButtonItem(UIBarButtonSystemItem.Add, (sender, e) =>
+				{
+					ViewModel.ShowAddCommand.Execute(null);
+				});
+				this.TabBarController.NavigationItem.SetRightBarButtonItem(addButton, false);
+			}
+
+			NavigationController.NavigationBar.TopItem.Title = "Food Pin";
+			NavigationController.HidesBarsOnSwipe = true;
 		}
 
 		private void ConfigureTableView()

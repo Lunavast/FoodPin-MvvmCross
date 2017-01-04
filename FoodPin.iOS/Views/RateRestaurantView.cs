@@ -29,6 +29,8 @@ namespace FoodPin.iOS.Views
 			var translate = CGAffineTransform.MakeTranslation(0, 500);
 			ButtonStackView.Transform = scale;
 			ButtonStackView.Transform = translate;
+
+			this.NavigationController.SetNavigationBarHidden(true, false);
 		}
 
 		public override void ViewDidAppear(bool animated)

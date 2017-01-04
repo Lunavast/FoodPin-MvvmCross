@@ -39,6 +39,7 @@
     <Compile Include="ViewModels\MapKitViewModel.cs" />
     <Compile Include="Services\IGeoCoderService.cs" />
     <Compile Include="Messenger\GeoCodingDoneMessage.cs" />
+    <Compile Include="ViewModels\EditRestaurantViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Core">

@@ -4,6 +4,7 @@ using MvvmCross.Platform;
 using Foundation;
 using UIKit;
 using MvvmCross.iOS.Views.Presenters;
+using FoodPin.iOS.Presenters;
 
 namespace FoodPin.iOS
 {
@@ -20,7 +21,7 @@ namespace FoodPin.iOS
 		{
 			Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-			var presenter = new MvxModalSupportIosViewPresenter(this, Window);
+			var presenter = new NestedModalPresenter(this, Window);
 			var setup = new Setup(this, presenter);
 			setup.Initialize();
 

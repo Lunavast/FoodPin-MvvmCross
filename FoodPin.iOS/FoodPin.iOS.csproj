@@ -262,6 +262,7 @@
     <Folder Include="Converters\" />
     <Folder Include="Assets.xcassets\Map.imageset\" />
     <Folder Include="Services\" />
+    <Folder Include="Presenters\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -271,6 +272,7 @@
     <InterfaceDefinition Include="Views\Cells\RestaurantInfoTableViewCell.xib" />
     <InterfaceDefinition Include="Views\RateRestaurantView.xib" />
     <InterfaceDefinition Include="Views\MapKitView.xib" />
+    <InterfaceDefinition Include="Views\EditRestaurantView.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -311,6 +313,12 @@
       <DependentUpon>MapKitView.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\GeoCoderService.cs" />
+    <Compile Include="Views\EditRestaurantView.cs" />
+    <Compile Include="Views\EditRestaurantView.designer.cs">
+      <DependentUpon>EditRestaurantView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoryboardContainer.cs" />
+    <Compile Include="Presenters\NestedModalPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodPin.Core\FoodPin.Core.csproj">

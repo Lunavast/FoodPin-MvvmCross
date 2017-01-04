@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Input;
 using FoodPin.Core.Models;
@@ -185,6 +186,21 @@ namespace FoodPin.Core.ViewModels
 				}
 
 			};
+		}
+
+		private MvxCommand _showAddCommand;
+		public ICommand ShowAddCommand
+		{
+			get
+			{
+				_showAddCommand = _showAddCommand ?? new MvxCommand(DoAdd);
+				return _showAddCommand;
+			}
+		}
+
+		private void DoAdd()
+		{
+			ShowViewModel<EditRestaurantViewModel>();
 		}
 
 		public ICommand SelectionChangeCommand
