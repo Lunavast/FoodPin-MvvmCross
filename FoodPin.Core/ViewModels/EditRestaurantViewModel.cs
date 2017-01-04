@@ -2,12 +2,20 @@
 using System.Diagnostics;
 using System.Windows.Input;
 using FoodPin.Core.Models;
+using FoodPin.Core.Services;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 
 namespace FoodPin.Core.ViewModels
 {
 	public class EditRestaurantViewModel : MvxViewModel
 	{
+		private readonly IDataService _dataService;
+		public EditRestaurantViewModel()
+		{
+			_dataService = Mvx.Resolve<IDataService>();
+		}
+
 		private MvxCommand _cancelCommand;
 		public ICommand CancelCommand
 		{
@@ -35,6 +43,7 @@ namespace FoodPin.Core.ViewModels
 
 		private void DoDone()
 		{
+			_dataService.AddItem(Item);
 			Close(this);
 		}
 
@@ -79,7 +88,6 @@ namespace FoodPin.Core.ViewModels
 			RaisePropertyChanged(() => Item);
 		}
 
-		private bool _isValid;
 		public bool IsValid
 		{
 			get

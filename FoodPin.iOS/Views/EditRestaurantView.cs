@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using FoodPin.Core.ViewModels;
+using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
 using UIKit;
@@ -112,6 +113,13 @@ namespace FoodPin.iOS.Views
 		{
 			RestaurantImageView.Image = originalImage;
 			RestaurantImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
+
+			using (NSData imageData = originalImage.AsPNG())
+			{
+				Byte[] myByteArray = new Byte[imageData.Length];
+				System.Runtime.InteropServices.Marshal.Copy(imageData.Bytes, myByteArray, 0, Convert.ToInt32(imageData.Length));
+				ViewModel.Item.ImageBytes = myByteArray;
+			}
 		}
 
 		void CancelationHandler(object sender, EventArgs e)
@@ -133,11 +141,12 @@ namespace FoodPin.iOS.Views
 			{
 				if (ViewModel.IsValid)
 				{
+					//Save
 					ViewModel.DoneCommand.Execute(null);
 				}
 				else 
 				{
-					var AlertController = UIAlertController.Create("Problem offured", "Some field are empty. Fill all forms and try again.", UIAlertControllerStyle.Alert);
+					var AlertController = UIAlertController.Create("Problem occured", "Some field are empty. Fill all forms and try again.", UIAlertControllerStyle.Alert);
 					var OkAction = UIAlertAction.Create("OK", UIAlertActionStyle.Cancel, (obj) => { });
 					AlertController.AddAction(OkAction);
 					this.PresentViewController(AlertController, true, null);

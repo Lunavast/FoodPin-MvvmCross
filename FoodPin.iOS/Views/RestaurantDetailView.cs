@@ -43,7 +43,11 @@ namespace FoodPin.iOS.Views
 		void BindView()
 		{
 			var BindingSet = this.CreateBindingSet<RestaurantDetailView, RestaurantDetailViewModel>();
-			BindingSet.Bind(RestaurantImageView).For(iv => iv.Image).To((RestaurantDetailViewModel vm) => vm.Item.ImageName).WithConversion("AssetsImage");
+			if (ViewModel.Item.ImageBytes != null)
+			{
+				BindingSet.Bind(RestaurantImageView).For(iv => iv.Image).To((RestaurantDetailViewModel vm) => vm.Item.ImageBytes).WithConversion("BytesToUIImage");
+				RestaurantImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
+			}
 			BindingSet.Bind(RatingButton).To((RestaurantDetailViewModel vm) => vm.ShowRatingCommand);
 			BindingSet.Bind(MapButton).To((RestaurantDetailViewModel vm) => vm.ShowMapCommand);
 			BindingSet.Apply();

@@ -20,7 +20,7 @@ namespace FoodPin.Core.Models
 		public string Name { get; set; }
 		public string Location { get; set; }
 		public string Type { get; set; }
-		public string ImageName { get; set; }
+		public byte[] ImageBytes { get; set; }
 		public string PhoneNumber { get; set; }
 		public Rating Rating { get; set; }
 		public bool IsVisited { get; set; } = false;

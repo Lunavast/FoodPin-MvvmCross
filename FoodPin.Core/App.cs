@@ -1,3 +1,4 @@
+using FoodPin.Core.Services;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 
@@ -7,7 +8,8 @@ namespace FoodPin.Core
     {
         public override void Initialize()
         {
-			//Mvx.LazyConstructAndRegisterSingleton<interface, service>();
+			Mvx.LazyConstructAndRegisterSingleton<IDataService, DataService>();
+			Mvx.LazyConstructAndRegisterSingleton<IRepository, Repository>();
 
 			RegisterAppStart<ViewModels.TabBarViewModel>();
         }

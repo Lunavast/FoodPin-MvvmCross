@@ -3,6 +3,7 @@ using CoreGraphics;
 using CoreLocation;
 using FoodPin.Core.Messenger;
 using FoodPin.Core.ViewModels;
+using FoodPin.iOS.Converters;
 using MapKit;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
@@ -98,9 +99,13 @@ namespace FoodPin.iOS.Views
 					annotationView.CanShowCallout = true;
 					(annotationView as MKPinAnnotationView).PinTintColor = UIColor.Orange;
 
-					var leftIconView = new UIImageView(new CGRect(0, 0, 53, 53));
-					leftIconView.Image = UIImage.FromBundle(parent.ViewModel.Item.ImageName);
-					annotationView.LeftCalloutAccessoryView = leftIconView;
+					if (parent.ViewModel.Item.ImageBytes != null)
+					{
+						var leftIconView = new UIImageView(new CGRect(0, 0, 53, 53));
+						var Image = BytesToImageConverter.Convert(parent.ViewModel.Item.ImageBytes);
+						leftIconView.Image = Image;
+						annotationView.LeftCalloutAccessoryView = leftIconView;
+					}
 
 					return annotationView;
 				}

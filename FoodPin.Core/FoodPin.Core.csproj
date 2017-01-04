@@ -40,6 +40,11 @@
     <Compile Include="Services\IGeoCoderService.cs" />
     <Compile Include="Messenger\GeoCodingDoneMessage.cs" />
     <Compile Include="ViewModels\EditRestaurantViewModel.cs" />
+    <Compile Include="Services\IRepository.cs" />
+    <Compile Include="Services\IDataService.cs" />
+    <Compile Include="Services\Repository.cs" />
+    <Compile Include="Services\DataSerivce.cs" />
+    <Compile Include="Messenger\DataChangeMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Core">

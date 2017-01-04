@@ -1,5 +1,7 @@
 ﻿using System;
+using FoodPin.Core.Services;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 
 namespace FoodPin.Core.ViewModels
 {

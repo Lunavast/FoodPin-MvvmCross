@@ -21,7 +21,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Bm-l9-eAI">
                         <rect key="frame" x="6" y="2" width="314" height="76"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MZJ-nI-ZQl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhotoAlbum" translatesAutoresizingMaskIntoConstraints="NO" id="MZJ-nI-ZQl">
                                 <rect key="frame" x="0.0" y="8" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="CPe-3a-JOi"/>
@@ -92,4 +92,7 @@
             <point key="canvasLocation" x="35" y="49"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="PhotoAlbum" width="64" height="64"/>
+    </resources>
 </document>

@@ -12,6 +12,7 @@ namespace FoodPin.Core.ViewModels
 	public class MapKitViewModel : MvxViewModel
 	{
 		private readonly IGeoCoderService _geoCoder;
+		private readonly IDataService _dataService;
 		private IMvxMessenger _messenger;
 		public IMvxMessenger Messenger
 		{
@@ -21,20 +22,14 @@ namespace FoodPin.Core.ViewModels
 		public MapKitViewModel()
 		{
 			_geoCoder = Mvx.Resolve<IGeoCoderService>();
+			_dataService = Mvx.Resolve<IDataService>();
 			Messenger = Mvx.Resolve<IMvxMessenger>();
 		}
 		public RestaurantItem Item { get; private set; }
 		public void Init(RestaurantDetailViewModel.Navigation nav)
 		{
-			Item = new RestaurantItem()
-			{
-				Name = nav.Name,
-				Location = nav.Location,
-				Type = nav.Type,
-				//IsVisited = nav.IsVisited,
-				ImageName = nav.ImageName,
-				//PhoneNumber = nav.PhoneNumber
-			};
+			Item = _dataService.GetItem(nav.Id);
+
 			_geoCoder.GeoCodeAddress(Item.Location, (double arg1, double arg2, Exception arg3) =>
 			{
 				if (arg3 == null)
