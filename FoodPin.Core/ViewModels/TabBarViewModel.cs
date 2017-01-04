@@ -9,11 +9,11 @@ namespace FoodPin.Core.ViewModels
 	{
 		public TabBarViewModel()
 		{
-			RestaurantChildView = new RestaurantListTableViewModel();
+			RestaurantChildView = new RestaurantViewModel();
 		}
 
-		private RestaurantListTableViewModel _restaurantViewModel;
-		public RestaurantListTableViewModel RestaurantChildView
+		private RestaurantViewModel _restaurantViewModel;
+		public RestaurantViewModel RestaurantChildView
 		{
 			get { return _restaurantViewModel; }
 			set { _restaurantViewModel = value; RaisePropertyChanged(() => RestaurantChildView); }

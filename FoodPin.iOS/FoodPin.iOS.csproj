@@ -286,6 +286,7 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Views\RestaurantView.xib" />
     <InterfaceDefinition Include="Views\Cells\RestaurantTableViewCell.xib" />
     <InterfaceDefinition Include="Views\RestaurantDetailView.xib" />
     <InterfaceDefinition Include="Views\Cells\RestaurantInfoTableViewCell.xib" />
@@ -305,6 +306,10 @@
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Views\TabBarView.cs" />
+    <Compile Include="Views\RestaurantView.cs" />
+    <Compile Include="Views\RestaurantView.designer.cs">
+      <DependentUpon>RestaurantView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Cells\RestaurantTableViewCell.cs" />
     <Compile Include="Views\Cells\RestaurantTableViewCell.designer.cs">
       <DependentUpon>RestaurantTableViewCell.cs</DependentUpon>
@@ -339,7 +344,6 @@
     <Compile Include="Converters\MaskToBoundsValueConverter.cs" />
     <Compile Include="Converters\BytesToUIImageValueConverter.cs" />
     <Compile Include="Converters\BytesToImageConverter.cs" />
-    <Compile Include="Views\RestaurantListTableView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodPin.Core\FoodPin.Core.csproj">

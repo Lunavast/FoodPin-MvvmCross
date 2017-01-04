@@ -31,6 +31,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App.cs" />
     <Compile Include="ViewModels\TabBarViewModel.cs" />
+    <Compile Include="ViewModels\RestaurantViewModel.cs" />
     <Compile Include="Models\RestaurantItem.cs" />
     <Compile Include="ViewModels\RestaurantDetailViewModel.cs" />
     <Compile Include="ViewModels\RateRestaurantViewModel.cs" />
@@ -44,7 +45,6 @@
     <Compile Include="Services\Repository.cs" />
     <Compile Include="Services\DataSerivce.cs" />
     <Compile Include="Messenger\DataChangeMessage.cs" />
-    <Compile Include="ViewModels\RestaurantListTableViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Core">
