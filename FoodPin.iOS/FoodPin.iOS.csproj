@@ -228,6 +228,10 @@
     <ImageAsset Include="Assets.xcassets\Map.imageset\map.png" />
     <ImageAsset Include="Assets.xcassets\Map.imageset\map%402x.png" />
     <ImageAsset Include="Assets.xcassets\Map.imageset\map%403x.png" />
+    <ImageAsset Include="Assets.xcassets\PhotoAlbum.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\PhotoAlbum.imageset\photoalbum.png" />
+    <ImageAsset Include="Assets.xcassets\PhotoAlbum.imageset\photoalbum%402x.png" />
+    <ImageAsset Include="Assets.xcassets\PhotoAlbum.imageset\photoalbum%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -263,6 +267,7 @@
     <Folder Include="Assets.xcassets\Map.imageset\" />
     <Folder Include="Services\" />
     <Folder Include="Presenters\" />
+    <Folder Include="Assets.xcassets\PhotoAlbum.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -319,6 +324,7 @@
     </Compile>
     <Compile Include="StoryboardContainer.cs" />
     <Compile Include="Presenters\NestedModalPresenter.cs" />
+    <Compile Include="Converters\VisitedColorValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodPin.Core\FoodPin.Core.csproj">

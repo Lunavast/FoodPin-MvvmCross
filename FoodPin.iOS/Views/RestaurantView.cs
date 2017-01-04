@@ -33,6 +33,7 @@ namespace FoodPin.iOS.Views
 		{
 			base.ViewWillAppear(animated);
 			ConfigureNavigationController();
+			TableView.DeselectRow(TableView.IndexPathForSelectedRow, false);
 		}
 
 		public override void ViewWillDisappear(bool animated)
