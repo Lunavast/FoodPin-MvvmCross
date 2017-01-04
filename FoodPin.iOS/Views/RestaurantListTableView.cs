@@ -10,16 +10,12 @@ using UIKit;
 
 namespace FoodPin.iOS.Views
 {
-	public partial class RestaurantView : MvxViewController
+	public class RestaurantListTableView : MvxTableViewController
 	{
-		public new RestaurantViewModel ViewModel
+		public new RestaurantListTableViewModel ViewModel
 		{
-			get { return (RestaurantViewModel)base.ViewModel; }
+			get { return (RestaurantListTableViewModel)base.ViewModel; }
 			set { base.ViewModel = value; }
-		}
-
-		public RestaurantView() : base("RestaurantView", null)
-		{
 		}
 
 		public override void ViewDidLoad()
@@ -41,7 +37,6 @@ namespace FoodPin.iOS.Views
 			base.ViewWillDisappear(animated);
 			NavigationController.NavigationBar.TopItem.Title = "";
 		}
-
 		private UIBarButtonItem _addButton { get; set; }
 		void ConfigureNavigationController()
 		{
@@ -66,7 +61,7 @@ namespace FoodPin.iOS.Views
 			var Source = new RestaurantSource(this, TableView, RestaurantTableViewCell.Key, RestaurantTableViewCell.Key);
 			TableView.Source = Source;
 
-			var BindingSet = this.CreateBindingSet<RestaurantView, RestaurantViewModel>();
+			var BindingSet = this.CreateBindingSet<RestaurantListTableView, RestaurantListTableViewModel>();
 			BindingSet.Bind(Source).To(vm => vm.Items);
 			BindingSet.Bind(Source).For(s => s.SelectionChangedCommand).To(vm => vm.SelectionChangeCommand);
 			BindingSet.Apply();
@@ -78,8 +73,8 @@ namespace FoodPin.iOS.Views
 		}
 		private class RestaurantSource : MvxSimpleTableViewSource
 		{
-			private RestaurantView _vc;
-			public RestaurantSource(RestaurantView vc, UITableView tableView, string nibName, string cellIdentifier = null) : base(tableView, nibName, cellIdentifier)
+			private RestaurantListTableView _vc;
+			public RestaurantSource(RestaurantListTableView vc, UITableView tableView, string nibName, string cellIdentifier = null) : base(tableView, nibName, cellIdentifier)
 			{
 				_vc = vc;
 			}
@@ -110,7 +105,5 @@ namespace FoodPin.iOS.Views
 				throw new NotImplementedException();
 			}
 		}
-
 	}
 }
-
