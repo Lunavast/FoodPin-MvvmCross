@@ -46,5 +46,11 @@ namespace FoodPin.iOS.Cells
 				this.CreateBinding(ThumbnailImageView).To((RestaurantItem i) => i.ImageName).WithConversion("AssetsImage").Apply();
 			});
 		}
+
+		public override void MovedToSuperview()
+		{
+			base.MovedToSuperview();
+			this.LayoutIfNeeded();
+		}
 	}
 }

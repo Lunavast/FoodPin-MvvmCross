@@ -55,6 +55,11 @@ namespace FoodPin.iOS.Views
 			BindingSet.Bind(Source).To(vm => vm.Items);
 			BindingSet.Bind(Source).For(s => s.SelectionChangedCommand).To(vm => vm.SelectionChangeCommand);
 			BindingSet.Apply();
+
+			TableView.ReloadData();
+			TableView.SetNeedsLayout();
+			TableView.LayoutIfNeeded();
+			TableView.ReloadData();
 		}
 		private class RestaurantSource : MvxSimpleTableViewSource
 		{
