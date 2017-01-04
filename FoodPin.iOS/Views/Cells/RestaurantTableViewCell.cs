@@ -53,5 +53,11 @@ namespace FoodPin.iOS.Cells
 			base.MovedToSuperview();
 			this.LayoutIfNeeded();
 		}
+
+		public override void PrepareForReuse()
+		{
+			base.PrepareForReuse();
+			ThumbnailImageView.Image = null;
+		}
 	}
 }

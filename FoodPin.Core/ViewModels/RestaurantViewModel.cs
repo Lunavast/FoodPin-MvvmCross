@@ -231,5 +231,10 @@ namespace FoodPin.Core.ViewModels
 		{
 			Items.Remove(item);
 		}
+
+		public void Search(string s)
+		{
+			Items = _dataService.SearchItems(s);
+		}
 	}
 }

@@ -15,5 +15,7 @@ namespace FoodPin.Core.Services
 		RestaurantItem Get(int id);
 
 		List<RestaurantItem> All();
+
+		List<RestaurantItem> Search(string s);
 	}
 }

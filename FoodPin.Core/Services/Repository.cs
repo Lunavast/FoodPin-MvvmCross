@@ -40,5 +40,10 @@ namespace FoodPin.Core.Services
 		{
 			_connection.Update(item);
 		}
+
+		public List<RestaurantItem> Search(string s)
+		{
+			return _connection.Table<RestaurantItem>().Where(c => c.Name.Contains(s) || c.Location.Contains(s) || c.Type.Contains(s)).ToList();
+		}
 	}
 }

@@ -75,6 +75,11 @@ namespace FoodPin.iOS.Views
 			TableView.SetNeedsLayout();
 			TableView.LayoutIfNeeded();
 			TableView.ReloadData();
+
+			SearchBar.TextChanged += (sender, e) =>
+			{
+				ViewModel.Search(e.SearchText);
+			};
 		}
 		private class RestaurantSource : MvxSimpleTableViewSource
 		{
