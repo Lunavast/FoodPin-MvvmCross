@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantView">
             <connections>
+                <outlet property="SearchBar" destination="is3-Ib-Ffp" id="mn2-N8-m9l"/>
                 <outlet property="TableView" destination="dKk-fG-zDX" id="J9V-fr-bmx"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
             </connections>
@@ -23,6 +24,11 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-fG-zDX">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" id="is3-Ib-Ffp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
                 </tableView>
                 <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8k-oz-OSN">
                     <rect key="frame" x="0.0" y="618" width="375" height="49"/>

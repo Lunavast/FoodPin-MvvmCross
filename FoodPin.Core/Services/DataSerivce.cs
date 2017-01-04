@@ -43,5 +43,11 @@ namespace FoodPin.Core.Services
 			_repository.Update(item);
 			_messenger.Publish(new DataChangeMessage(this));
 		}
+
+		public List<RestaurantItem> SearchItems(string s)
+		{
+			_messenger.Publish(new DataChangeMessage(this));
+			return _repository.Search(s);
+		}
 	}
 }
