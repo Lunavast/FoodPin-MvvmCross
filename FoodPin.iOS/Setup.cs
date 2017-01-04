@@ -1,6 +1,9 @@
+using FoodPin.Core.Services;
+using FoodPin.iOS.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
+using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using UIKit;
 
@@ -27,5 +30,10 @@ namespace FoodPin.iOS
         {
             return new DebugTrace();
         }
+				protected override void InitializeFirstChance()
+		{
+			Mvx.RegisterSingleton<IGeoCoderService>(new GeoCoderService());
+			base.InitializeFirstChance();
+		}
     }
 }
