@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Diagnostics;
+using FoodPin.Core.Messenger;
 using FoodPin.Core.Models;
 using FoodPin.Core.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using MvvmCross.Plugins.Messenger;
 
 namespace FoodPin.Core.ViewModels
 {
 	public class MapKitViewModel : MvxViewModel
 	{
 		private readonly IGeoCoderService _geoCoder;
+		private IMvxMessenger _messenger;
+		public IMvxMessenger Messenger
+		{
+			get { return _messenger; }
+			set { _messenger = value; RaisePropertyChanged(() => Messenger); }
+		}
 		public MapKitViewModel()
 		{
 			_geoCoder = Mvx.Resolve<IGeoCoderService>();
+			Messenger = Mvx.Resolve<IMvxMessenger>();
 		}
 		public RestaurantItem Item { get; private set; }
 		public void Init(RestaurantDetailViewModel.Navigation nav)
@@ -30,23 +39,13 @@ namespace FoodPin.Core.ViewModels
 			{
 				if (arg3 == null)
 				{
-					Lat = arg1;
-					Lng = arg2;
+					_messenger.Publish(new GeoCodingDoneMessage(this, arg1, arg2, false));
+				}
+				else 
+				{
+					_messenger.Publish(new GeoCodingDoneMessage(this, 0, 0, true));
 				}
 			});
-		}
-
-		private double _lat;
-		public double Lat
-		{
-			get { return _lat; }
-			set { _lat = value; RaisePropertyChanged(() => Lat); }
-		}
-		private double _lng;
-		public double Lng
-		{
-			get { return _lng; }
-			set { _lng = value; RaisePropertyChanged(() => Lng); }
 		}
 	}
 }

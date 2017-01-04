@@ -1,10 +1,12 @@
 ﻿using System;
 using CoreGraphics;
 using CoreLocation;
+using FoodPin.Core.Messenger;
 using FoodPin.Core.ViewModels;
 using MapKit;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
+using MvvmCross.Plugins.Messenger;
 using UIKit;
 
 namespace FoodPin.iOS.Views
@@ -17,39 +19,40 @@ namespace FoodPin.iOS.Views
 			set { base.ViewModel = value; }
 		}
 
+		private MvxSubscriptionToken _token;
 		public MapKitView() : base("MapKitView", null)
 		{
+		}
+
+		void UpdateLocation(GeoCodingDoneMessage obj)
+		{
+			if (obj.Error)
+				return;
+
+			ConfigureAnnotation(obj.Lat, obj.Lng);
+
+			MapView.ShowAnnotations(new IMKAnnotation[] { annotation }, true);
+			MapView.SelectAnnotation(annotation, true);
 		}
 
 		BasicMapAnnotation annotation { get; set; }
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			ConfigureAnnotation();
-			BindView();
 
-			MapView.ShowAnnotations(new IMKAnnotation[] { annotation }, true);
-			MapView.SelectAnnotation(annotation, true);
+			_token = ViewModel.Messenger.Subscribe<GeoCodingDoneMessage>(UpdateLocation);
 		}
 
-		void ConfigureAnnotation()
+		void ConfigureAnnotation(double lat, double lng)
 		{
 			MapView.Delegate = new MapDelegate(this);
 			annotation = new BasicMapAnnotation(new CoreLocation.CLLocationCoordinate2D()
 				{
-					Latitude = 10,
-					Longitude = 10,
+					Latitude = lat,
+					Longitude = lng,
 				},
 				ViewModel.Item.Name,
 				ViewModel.Item.Type);
-		}
-
-		void BindView()
-		{
-			var BindingSet = this.CreateBindingSet<MapKitView, MapKitViewModel>();
-			//BindingSet.Bind(annotation).For(a => a.Coordinate.Latitude).To(vm => vm.Lat);
-			//BindingSet.Bind(annotation).For(a => a.Coordinate.Longitude).To(vm => vm.Lng);
-			BindingSet.Apply();
 		}
 
 		class BasicMapAnnotation : MKAnnotation

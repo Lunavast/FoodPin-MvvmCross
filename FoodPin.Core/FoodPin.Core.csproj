@@ -38,6 +38,7 @@
     <Compile Include="Messenger\RatingChangeMessage.cs" />
     <Compile Include="ViewModels\MapKitViewModel.cs" />
     <Compile Include="Services\IGeoCoderService.cs" />
+    <Compile Include="Messenger\GeoCodingDoneMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Core">
