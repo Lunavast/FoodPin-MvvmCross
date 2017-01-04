@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using FoodPin.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
@@ -26,11 +27,96 @@ namespace FoodPin.iOS.Views
 			ConfigureNavigationController();
 			BindView();
 
-			var TapGesture = new UITapGestureRecognizer(() =>
+			var TapGesture = new UITapGestureRecognizer((UITapGestureRecognizer obj) =>
 			{
+				var point = obj.LocationInView(View);
+				var indexPath = TableView.IndexPathForRowAtPoint(point);
+
+				if (indexPath.Row == 0)
+				{
+					StartPicker();
+				}
 				View.EndEditing(true);
 			});
 			View.AddGestureRecognizer(TapGesture);
+		}
+
+		private UIImagePickerController _imagePicker;
+		void StartPicker()
+		{
+			if (!UIImagePickerController.IsSourceTypeAvailable(UIImagePickerControllerSourceType.Camera))
+			{
+				StartLibraryPicker();
+				return;
+			}
+			var ActionController = UIAlertController.Create("", "How would you like to add an image?", UIAlertControllerStyle.ActionSheet);
+			var CameraAction = UIAlertAction.Create("Take a photo", UIAlertActionStyle.Default, (obj) =>
+			{
+				StartCameraPicker();
+			});
+			var LibaryAction = UIAlertAction.Create("Choose from library", UIAlertActionStyle.Default, (obj) =>
+{
+				StartLibraryPicker();
+});
+			var CancelAction = UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, (obj) => { });
+
+			ActionController.AddAction(CameraAction);
+			ActionController.AddAction(LibaryAction);
+			ActionController.AddAction(CancelAction);
+
+			this.PresentViewController(ActionController, true, null);
+		}
+
+
+		void StartCameraPicker()
+		{
+			StartPhotoPicker(UIImagePickerControllerSourceType.Camera);
+		}
+
+		void StartLibraryPicker()
+		{
+			StartPhotoPicker(UIImagePickerControllerSourceType.PhotoLibrary);
+		}
+
+		void StartPhotoPicker(UIImagePickerControllerSourceType type)
+		{
+			_imagePicker = new UIImagePickerController();
+			_imagePicker.SourceType = type;
+			_imagePicker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
+
+			_imagePicker.FinishedPickingMedia += FinishedPickingMediaHandler;
+			_imagePicker.Canceled += CancelationHandler;
+
+			NavigationController.PresentModalViewController(_imagePicker, true);
+		}
+
+		void FinishedPickingMediaHandler(object sender, UIImagePickerMediaPickedEventArgs e)
+		{
+			switch (e.Info[UIImagePickerController.MediaType].ToString())
+			{
+				case "public.image":
+					UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
+					if (originalImage != null)
+					{
+						ShowPhoto(originalImage);
+					}
+					break;
+				case "public.video":
+					Console.WriteLine("Only images are supported");
+					break;
+			}
+			_imagePicker.DismissViewController(true, null);
+		}
+
+		void ShowPhoto(UIImage originalImage)
+		{
+			RestaurantImageView.Image = originalImage;
+			RestaurantImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
+		}
+
+		void CancelationHandler(object sender, EventArgs e)
+		{
+			_imagePicker.DismissViewController(true, null);
 		}
 
 		private UIBarButtonItem _cancel;
@@ -65,6 +151,7 @@ namespace FoodPin.iOS.Views
 			BindingSet.Bind(NoButton).To(vm => vm.NotVisitedCommand);
 			BindingSet.Apply();
 		}
+
+
 	}
 }
-

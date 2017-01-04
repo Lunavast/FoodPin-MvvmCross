@@ -36,6 +36,10 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+	<key>NSCameraUsageDescription</key>
+	<string>FoodPin needs access to use your camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>FoodPin needs access to use your photo library</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

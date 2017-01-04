@@ -78,5 +78,7 @@ namespace FoodPin.Core.ViewModels
 			Item.IsVisited = true;
 			RaisePropertyChanged(() => Item);
 		}
+
+
 	}
 }
