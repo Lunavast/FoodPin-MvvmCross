@@ -30,6 +30,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhotoAlbum" translatesAutoresizingMaskIntoConstraints="NO" id="YYj-ic-0BX">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="0.20395440919999999" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>

@@ -239,7 +239,7 @@ namespace FoodPin.Core.ViewModels
 			set { _searchPhase = value; RaisePropertyChanged(() => SearchPhase); Search(); }
 		}
 
-		public void Search()
+		private void Search()
 		{
 			Items = _dataService.SearchItems(SearchPhase);
 		}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalkthroughView">
+            <connections>
+                <outlet property="ContentLabel" destination="SjX-Uo-gul" id="6Gj-fs-YFk"/>
+                <outlet property="HeadingLabel" destination="TDZ-5j-7uD" id="QYq-lp-PKr"/>
+                <outlet property="IntoImageView" destination="Tte-Eq-D0V" id="7e1-3E-16P"/>
+                <outlet property="NextButton" destination="zMo-IE-OM5" id="VTh-KD-CtC"/>
+                <outlet property="PageControl" destination="Oon-wv-4H8" id="d9Z-dt-bCN"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Oon-wv-4H8">
+                    <rect key="frame" x="168" y="630" width="39" height="37"/>
+                </pageControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personalize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDZ-5j-7uD">
+                    <rect key="frame" x="132" y="40" width="111" height="26"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tte-Eq-D0V">
+                    <rect key="frame" x="16" y="74" width="343" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Tte-Eq-D0V" secondAttribute="height" multiplier="343:300" id="IFm-er-Xyt"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find restaurants pinned by your friends and other foodies around the world" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjX-Uo-gul">
+                    <rect key="frame" x="16" y="396" width="343" height="43"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMo-IE-OM5">
+                    <rect key="frame" x="320" y="633" width="39" height="30"/>
+                    <state key="normal" title="NEXT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.84296332465277779" green="0.12947591145833334" blue="0.046603732638888888" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="SjX-Uo-gul" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="16" id="55i-XM-8ez"/>
+                <constraint firstItem="Tte-Eq-D0V" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="16" id="GHc-a8-DZ4"/>
+                <constraint firstItem="TDZ-5j-7uD" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="GUu-jY-qJX"/>
+                <constraint firstAttribute="bottom" secondItem="zMo-IE-OM5" secondAttribute="bottom" constant="4" id="JcP-kb-a4Q"/>
+                <constraint firstItem="TDZ-5j-7uD" firstAttribute="top" secondItem="2" secondAttribute="top" constant="40" id="PB4-C0-MOI"/>
+                <constraint firstAttribute="trailing" secondItem="SjX-Uo-gul" secondAttribute="trailing" constant="16" id="SR9-fu-3oy"/>
+                <constraint firstAttribute="bottom" secondItem="Oon-wv-4H8" secondAttribute="bottom" id="TFx-CM-srK"/>
+                <constraint firstItem="SjX-Uo-gul" firstAttribute="top" secondItem="Tte-Eq-D0V" secondAttribute="bottom" constant="22" id="U9k-0m-v3P"/>
+                <constraint firstAttribute="trailing" secondItem="Tte-Eq-D0V" secondAttribute="trailing" constant="16" id="aHw-fJ-i7C"/>
+                <constraint firstAttribute="trailing" secondItem="zMo-IE-OM5" secondAttribute="trailing" constant="16" id="i28-8V-T0z"/>
+                <constraint firstItem="Oon-wv-4H8" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="pEl-RG-Ngo"/>
+                <constraint firstItem="Tte-Eq-D0V" firstAttribute="top" secondItem="TDZ-5j-7uD" secondAttribute="bottom" constant="8" id="w4f-AN-DWZ"/>
+            </constraints>
+            <point key="canvasLocation" x="253.5" y="-69.5"/>
+        </view>
+    </objects>
+</document>

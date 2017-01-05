@@ -34,6 +34,17 @@ namespace FoodPin.iOS.Views
 			SelectedViewController = ViewControllers[0];
 		}
 
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(animated);
+
+			var userDefaults = NSUserDefaults.StandardUserDefaults;
+			if (!userDefaults.BoolForKey("Walkthrough"))
+			{
+				ViewModel.ShowWalkthrough.Execute(null);
+			}
+		}
+
 		private int _createdSoFarCount = 0;
 
 		private UIViewController CreateTabFor(string title, string imageName, IMvxViewModel viewModel)

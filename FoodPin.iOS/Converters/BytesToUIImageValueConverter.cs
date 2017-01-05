@@ -13,7 +13,7 @@ public class BytesToUIImageValueConverter : MvxValueConverter<byte[], UIImage>
 				if (value == null)
 					return UIImage.FromBundle("PhotoAlbum");
 
-			return BytesToImageConverter.Convert(value);			
+				return BytesToImageConverter.Convert(value);			
 			}
 		}
 	}

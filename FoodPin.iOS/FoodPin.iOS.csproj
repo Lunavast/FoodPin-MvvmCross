@@ -247,6 +247,18 @@
     <ImageAsset Include="Assets.xcassets\PhotoAlbum.imageset\photoalbum.png" />
     <ImageAsset Include="Assets.xcassets\PhotoAlbum.imageset\photoalbum%402x.png" />
     <ImageAsset Include="Assets.xcassets\PhotoAlbum.imageset\photoalbum%403x.png" />
+    <ImageAsset Include="Assets.xcassets\NoPhoto.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\NoPhoto.imageset\No Photo%402x.png.png" />
+    <ImageAsset Include="Assets.xcassets\NoPhoto.imageset\No Photo%403x.png.png" />
+    <ImageAsset Include="Assets.xcassets\foodpin-intro-2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\foodpin-intro-2.imageset\foodpin-intro-2%402x.png" />
+    <ImageAsset Include="Assets.xcassets\foodpin-intro-2.imageset\foodpin-intro-2%403x.png" />
+    <ImageAsset Include="Assets.xcassets\foodpin-intro-1.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\foodpin-intro-1.imageset\foodpin-intro-1%402x.png" />
+    <ImageAsset Include="Assets.xcassets\foodpin-intro-1.imageset\foodpin-intro-1%403x.png" />
+    <ImageAsset Include="Assets.xcassets\foodpin-intro-3.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\foodpin-intro-3.imageset\foodpin-intro-3%402x.png" />
+    <ImageAsset Include="Assets.xcassets\foodpin-intro-3.imageset\foodpin-intro-3%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -283,6 +295,10 @@
     <Folder Include="Services\" />
     <Folder Include="Presenters\" />
     <Folder Include="Assets.xcassets\PhotoAlbum.imageset\" />
+    <Folder Include="Assets.xcassets\NoPhoto.imageset\" />
+    <Folder Include="Assets.xcassets\foodpin-intro-2.imageset\" />
+    <Folder Include="Assets.xcassets\foodpin-intro-1.imageset\" />
+    <Folder Include="Assets.xcassets\foodpin-intro-3.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -293,6 +309,7 @@
     <InterfaceDefinition Include="Views\RateRestaurantView.xib" />
     <InterfaceDefinition Include="Views\MapKitView.xib" />
     <InterfaceDefinition Include="Views\EditRestaurantView.storyboard" />
+    <InterfaceDefinition Include="Views\WalkthroughView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -344,6 +361,11 @@
     <Compile Include="Converters\MaskToBoundsValueConverter.cs" />
     <Compile Include="Converters\BytesToUIImageValueConverter.cs" />
     <Compile Include="Converters\BytesToImageConverter.cs" />
+    <Compile Include="Views\WalkthroughView.cs" />
+    <Compile Include="Views\WalkthroughView.designer.cs">
+      <DependentUpon>WalkthroughView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\CurrentStateValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodPin.Core\FoodPin.Core.csproj">
