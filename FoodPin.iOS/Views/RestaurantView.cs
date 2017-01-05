@@ -69,6 +69,7 @@ namespace FoodPin.iOS.Views
 			var BindingSet = this.CreateBindingSet<RestaurantView, RestaurantViewModel>();
 			BindingSet.Bind(Source).To(vm => vm.Items);
 			BindingSet.Bind(Source).For(s => s.SelectionChangedCommand).To(vm => vm.SelectionChangeCommand);
+			BindingSet.Bind(SearchBar).For(v => v.Text).To(vm => vm.SearchPhase);
 			BindingSet.Apply();
 
 			TableView.ReloadData();
@@ -76,10 +77,10 @@ namespace FoodPin.iOS.Views
 			TableView.LayoutIfNeeded();
 			TableView.ReloadData();
 
-			SearchBar.TextChanged += (sender, e) =>
-			{
-				ViewModel.Search(e.SearchText);
-			};
+			//SearchBar.TextChanged += (sender, e) =>
+			//{
+			//	ViewModel.Search(e.SearchText);
+			//};
 		}
 		private class RestaurantSource : MvxSimpleTableViewSource
 		{

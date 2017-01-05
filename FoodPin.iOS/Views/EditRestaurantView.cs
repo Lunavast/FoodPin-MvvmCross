@@ -141,7 +141,6 @@ namespace FoodPin.iOS.Views
 			{
 				if (ViewModel.IsValid)
 				{
-					//Save
 					ViewModel.DoneCommand.Execute(null);
 				}
 				else 

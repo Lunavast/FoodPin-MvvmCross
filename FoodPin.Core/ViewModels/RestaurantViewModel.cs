@@ -232,9 +232,16 @@ namespace FoodPin.Core.ViewModels
 			Items.Remove(item);
 		}
 
-		public void Search(string s)
+		private string _searchPhase;
+		public string SearchPhase
 		{
-			Items = _dataService.SearchItems(s);
+			get { return _searchPhase; }
+			set { _searchPhase = value; RaisePropertyChanged(() => SearchPhase); Search(); }
+		}
+
+		public void Search()
+		{
+			Items = _dataService.SearchItems(SearchPhase);
 		}
 	}
 }
