@@ -271,6 +271,8 @@
     <ImageAsset Include="Assets.xcassets\tabitem-selected.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\tabitem-selected.imageset\tabitem-selected%402x.png" />
     <ImageAsset Include="Assets.xcassets\tabitem-selected.imageset\tabitem-selected%403x.png" />
+    <ImageAsset Include="Assets.xcassets\infusion.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\infusion.imageset\infusion_rgb_0.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -315,6 +317,7 @@
     <Folder Include="Assets.xcassets\discover.imageset\" />
     <Folder Include="Assets.xcassets\favourite.imageset\" />
     <Folder Include="Assets.xcassets\tabitem-selected.imageset\" />
+    <Folder Include="Assets.xcassets\infusion.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

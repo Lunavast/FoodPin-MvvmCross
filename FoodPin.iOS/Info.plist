@@ -42,5 +42,7 @@
 	<string>FoodPin needs access to use your photo library</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSAllowsArbitraryLoads</key>
+	<false/>
 </dict>
 </plist>

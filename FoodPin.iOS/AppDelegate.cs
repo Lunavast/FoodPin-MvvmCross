@@ -57,7 +57,6 @@ namespace FoodPin.iOS
 		{
 			UITabBar.Appearance.TintColor = UIColor.FromRGB(235.0f / 255.0f, 75.0f / 255.0f, 27.0f / 255.0f);
 			UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(242.0f / 255.0f, 116.0f / 255.0f, 119.0f / 255.0f);
-			//UITabBar.Appearance.SelectionIndicatorImage = UIImage.FromBundle("tabitem-selected");
 		}
 	}
 }
