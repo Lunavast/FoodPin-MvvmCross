@@ -259,6 +259,18 @@
     <ImageAsset Include="Assets.xcassets\foodpin-intro-3.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\foodpin-intro-3.imageset\foodpin-intro-3%402x.png" />
     <ImageAsset Include="Assets.xcassets\foodpin-intro-3.imageset\foodpin-intro-3%403x.png" />
+    <ImageAsset Include="Assets.xcassets\about.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\about.imageset\about%402x.png" />
+    <ImageAsset Include="Assets.xcassets\about.imageset\about%403x.png" />
+    <ImageAsset Include="Assets.xcassets\discover.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\discover.imageset\discover%403x.png" />
+    <ImageAsset Include="Assets.xcassets\discover.imageset\discover%402x.png" />
+    <ImageAsset Include="Assets.xcassets\favourite.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\favourite.imageset\favorite%402x.png" />
+    <ImageAsset Include="Assets.xcassets\favourite.imageset\favorite%403x.png" />
+    <ImageAsset Include="Assets.xcassets\tabitem-selected.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tabitem-selected.imageset\tabitem-selected%402x.png" />
+    <ImageAsset Include="Assets.xcassets\tabitem-selected.imageset\tabitem-selected%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -299,6 +311,10 @@
     <Folder Include="Assets.xcassets\foodpin-intro-2.imageset\" />
     <Folder Include="Assets.xcassets\foodpin-intro-1.imageset\" />
     <Folder Include="Assets.xcassets\foodpin-intro-3.imageset\" />
+    <Folder Include="Assets.xcassets\about.imageset\" />
+    <Folder Include="Assets.xcassets\discover.imageset\" />
+    <Folder Include="Assets.xcassets\favourite.imageset\" />
+    <Folder Include="Assets.xcassets\tabitem-selected.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -310,6 +326,8 @@
     <InterfaceDefinition Include="Views\MapKitView.xib" />
     <InterfaceDefinition Include="Views\EditRestaurantView.storyboard" />
     <InterfaceDefinition Include="Views\WalkthroughView.xib" />
+    <InterfaceDefinition Include="Views\DiscoverView.storyboard" />
+    <InterfaceDefinition Include="Views\AboutView.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -366,6 +384,8 @@
       <DependentUpon>WalkthroughView.cs</DependentUpon>
     </Compile>
     <Compile Include="Converters\CurrentStateValueConverter.cs" />
+    <Compile Include="Views\DiscoverView.cs" />
+    <Compile Include="Views\AboutView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodPin.Core\FoodPin.Core.csproj">

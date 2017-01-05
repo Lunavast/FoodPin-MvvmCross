@@ -11,6 +11,8 @@ namespace FoodPin.Core.ViewModels
 		public TabBarViewModel()
 		{
 			RestaurantChildView = new RestaurantViewModel();
+			DiscoverViewModel = new DiscoverViewModel();
+			AboutViewModel = new AboutViewModel();
 		}
 
 		private RestaurantViewModel _restaurantViewModel;
@@ -18,6 +20,20 @@ namespace FoodPin.Core.ViewModels
 		{
 			get { return _restaurantViewModel; }
 			set { _restaurantViewModel = value; RaisePropertyChanged(() => RestaurantChildView); }
+		}
+
+		private DiscoverViewModel _discoverViewModel;
+		public DiscoverViewModel DiscoverViewModel
+		{
+			get { return _discoverViewModel; }
+			set { _discoverViewModel = value; RaisePropertyChanged(() => DiscoverViewModel); }
+		}
+
+		private AboutViewModel _aboutViewModel;
+		public AboutViewModel AboutViewModel
+		{
+			get { return _aboutViewModel; }
+			set { _aboutViewModel = value; RaisePropertyChanged(() => AboutViewModel); }
 		}
 
 		private MvxCommand _showWalkthrough;

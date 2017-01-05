@@ -46,6 +46,8 @@
     <Compile Include="Services\DataSerivce.cs" />
     <Compile Include="Messenger\DataChangeMessage.cs" />
     <Compile Include="ViewModels\WalkthroughViewModel.cs" />
+    <Compile Include="ViewModels\DiscoverViewModel.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Core">

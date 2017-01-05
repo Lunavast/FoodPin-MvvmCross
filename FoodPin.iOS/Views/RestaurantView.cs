@@ -45,7 +45,7 @@ namespace FoodPin.iOS.Views
 		private UIBarButtonItem _addButton { get; set; }
 		void ConfigureNavigationController()
 		{
-			if (_addButton == null)
+			if (_addButton == null || this.TabBarController.NavigationItem.RightBarButtonItem == null)
 			{
 				UIBarButtonItem addButton = new UIBarButtonItem(UIBarButtonSystemItem.Add, (sender, e) =>
 				{

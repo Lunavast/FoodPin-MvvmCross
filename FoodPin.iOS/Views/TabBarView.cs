@@ -27,7 +27,9 @@ namespace FoodPin.iOS.Views
 
 			var viewControllers = new UIViewController[]
 			{
-				CreateTabFor("Tab 1", null, ViewModel.RestaurantChildView)
+				CreateTabFor("Favourites", "favourite", ViewModel.RestaurantChildView),
+				CreateTabFor("Discover", "discover", ViewModel.DiscoverViewModel),
+				CreateTabFor("About", "about", ViewModel.AboutViewModel)
 			};
 			ViewControllers = viewControllers;
 			CustomizableViewControllers = new UIViewController[] { };
@@ -59,7 +61,8 @@ namespace FoodPin.iOS.Views
 		void SetTitleAndTabBarItem(UIViewController screen, string title, string imageName)
 		{
 			screen.Title = title;
-			screen.TabBarItem = new UITabBarItem(UITabBarSystemItem.Favorites, _createdSoFarCount);
+			screen.TabBarItem = new UITabBarItem(title, UIImage.FromBundle(imageName), _createdSoFarCount); 
+				//UITabBarSystemItem.Favorites, _createdSoFarCount);
 			_createdSoFarCount++;
 		}
 	}
